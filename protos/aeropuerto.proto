@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+//Servicio Aeropuerto
+//
+//Pedir aterrizaje: Solicitud de aterrizaje por parte del avion.
+service Aeropuerto{
+  rpc Pedir_Aterrizaje(AtRequest) returns(AtReply){}
+}
+
+//Solicitud de aterrizaje:
+//nombre: nombre del Avion
+//proveniente: desde donde viene el Avion
+message AtRequest{
+  string nombre = 1;
+  string proveniente = 2;
+}
+
+//Respuesta a solicitud de aterrizaje:
+//respuesta: 0 si no hay pistas de aterrizaje disponible, 1 si es que puede aterrizar.
+//pista: numero de pista en la cual debe aterrizar
+//altura: altura que se debe esperar aterrizaje si respuesta fue 0
+//pos_cola: Posicion en la cola para aterrizar
+message AtReply{
+  int32 respuesta = 1;
+  int32 pista = 2;
+  int32 altura = 3;
+  int32 pos_cola = 4;
+}
