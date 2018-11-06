@@ -6,7 +6,7 @@ import aeropuerto_pb2 as aeropuerto__pb2
 
 class AeropuertoStub(object):
   """Servicio Aeropuerto
-
+  
   Pedir aterrizaje: Solicitud de aterrizaje por parte del avion.
   """
 
@@ -17,7 +17,7 @@ class AeropuertoStub(object):
       channel: A grpc.Channel.
     """
     self.Pedir_Aterrizaje = channel.unary_unary(
-        '/Aeropuerto/Pedir_Aterrizaje',
+        '/aeropuerto.Aeropuerto/Pedir_Aterrizaje',
         request_serializer=aeropuerto__pb2.AtRequest.SerializeToString,
         response_deserializer=aeropuerto__pb2.AtReply.FromString,
         )
@@ -25,7 +25,7 @@ class AeropuertoStub(object):
 
 class AeropuertoServicer(object):
   """Servicio Aeropuerto
-
+  
   Pedir aterrizaje: Solicitud de aterrizaje por parte del avion.
   """
 
@@ -46,5 +46,5 @@ def add_AeropuertoServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'Aeropuerto', rpc_method_handlers)
+      'aeropuerto.Aeropuerto', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

@@ -38,11 +38,16 @@ class AeropuertoServicer(aeropuerto_pb2_grpc.AeropuertoServicer):
             #Respuesta
             respuesta = aeropuerto_pb2.AtReply(respuesta=1, pista=pista_disponible, altura=5, pos_cola=0)
             return(respuesta)
+        else:
+            print("Todas las pistas ocupadas, encolando avion \n")
+            respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5, pos_cola = 2)
+            return(respuesta)
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     aeropuerto_pb2_grpc.add_AeropuertoServicer_to_server(AeropuertoServicer(), server)
     server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:50052')
     server.start()
     try:
         while True:
