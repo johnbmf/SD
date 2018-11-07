@@ -6,6 +6,8 @@ package aeropuerto;
 //Pedir aterrizaje: Solicitud de aterrizaje por parte del avion.
 service Aeropuerto{
   rpc Pedir_Aterrizaje(AtRequest) returns(AtReply){}
+  rpc Pedir_Aterrizaje_Encolado(AtRequest) returns(AtReply){}
+  rpc Solicitar_despegue(DesRequest) returns(DesReply){}
 }
 
 //Solicitud de aterrizaje:
@@ -26,4 +28,21 @@ message AtReply{
   int32 pista = 2;
   int32 altura = 3;
   int32 pos_cola = 4;
+}
+
+message DesRequest{
+  int32 combustible = 1;
+  int32 combustible_max = 2;
+  int32 carga = 3;
+  int32 carga_max = 4;
+  string destino = 5;
+  string nombre = 6;
+}
+
+message DesReply{
+  int32 respuesta = 1;
+  int32 pista = 2;
+  int32 altura = 3;
+  string nombre_torre = 4;  //nombre de torre en la que realiza el despegue.
+  string torre_control = 5; //localhost:puerto destino
 }
