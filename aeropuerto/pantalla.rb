@@ -26,11 +26,36 @@ require 'grpc'
 require 'aeropuerto_services_pb'
 
 def main
-  stub = Aeropuerto::Aeropuerto::Stub.new('localhost:50052', :this_channel_is_insecure)
-  user = ARGV.size > 0 ?  ARGV[0] : 'world'
-  proveniente = 'Nowhere'
-  message = stub.Pedir_Aterrizaje(Aeropuerto::AtRequest.new(nombre: user, proveniente: proveniente)).respuesta
-  p "Greeting: #{message}"
+  stub = Aero::Aery::Stub.new('localhost:50052', :this_channel_is_insecure)
+  #user = ARGV.size > 0 ?  ARGV[0] : 'world'
+  #message = stub.say_hello(Helloworld::HelloRequest.new(name: user)).message
+
+  #message = stub.Pantallazo(Aero::ScreenReq.new(peticion: 1)).message
+
+  #if message.ar_nombre1 != ""
+  puts "Arrivals"
+  puts "Avion     \t\tDestino   \t\tPista"
+  #  puts "#{message.ar_nombre1} \t#{message.ar_destino1}         \t #{message.ar_pista1}"
+
+#    if message.ar_nombre2 != ""
+#      puts "#{message.ar_nombre2} \t#{message.ar_destino2}         \t #{message.ar_pista2}"
+#    end
+#  end
+
+#  if message.de_nombre1 != ""
+puts "\n\n"
+puts "Departures"
+puts "Avion     \t\tDestino   \t\tPista"
+#    puts "#{message.de_nombre1} \t#{message.de_destino1}         \t #{message.de_pista1}"
+#
+#    if message.de_nombre2 != ""
+#      puts "#{message.de_nombre2} \t#{message.de_destino2}         \t #{message.de_pista2}"
+#    end
+#  end
+
+  #message.each do |i|
+
 end
+
 
 main
