@@ -17,7 +17,7 @@ en la carpeta "aeropuerto".
 -En capacidad de combustible maxima, ingresar la cantidad maxima de combustible del avion.  
 -IMPORTANTE: en torre inicial, si se quiere iniciar en Santiago se debe poner localhost:50051 .  
 Si se quiere iniciar en Antofagasta se debe poner localhost:50061.
-Si se quiere iniciar en Lima se debe poner localhost:50071.
+Si se quiere iniciar en Lima se debe poner localhost:50071.   
 -Se pedirá aterrizaje en la torre inicial (sujeto a disponibilidad de pistas).  
 -Una vez aterrizado, se despliegan opciones de cargar combustible, seleccionar carga actual y peticion para despegar.  
 -Cuando se carga combustible este se llena al max (y se reduce a la mitad con cada viaje).  
