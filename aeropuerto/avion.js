@@ -110,7 +110,7 @@ function solicitar_aterrizaje(nombre, proveniente, torre_control, loop_opciones)
       var stdin = process.openStdin();
       console.log(`[Avion - ${nombre}]: Todas las pistas estan asignadas, el avion predecesor es ${response.pos_cola}...`);
       console.log(`Esperar a una alura de ${response.altura}`);
-      while do (respuesta == 0) {
+      while(respuesta == 0) {
         sleep(10);
         client.Pedir_Aterrizaje_Encolado({nombre: nombre,proveniente: proveniente}, (response) => {
           respuesta = response.respuesta;
