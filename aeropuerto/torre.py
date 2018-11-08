@@ -85,7 +85,7 @@ class AeropuertoServicer(aeropuerto_pb2_grpc.AeropuertoServicer):
                 return (respuesta)
 
         else:
-            respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5, pos_cola = 2)
+            respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5, pos_cola = "")
             return (respuesta)
 
     def Solicitar_despegue(self, request, context):
