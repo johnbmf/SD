@@ -1,0 +1,21 @@
+RFC: Implementación de un canal de comunicación entre torres de control, aviones y pantallas de un aeropuerto utilizando gRPC.
+
+# Problema.
+	Lo que se busca resolver a través de esta implementación, es poder generar un canal de comunicación sincronizado entre tres componentes, Torres de control, Aviones y Pantallas utilizando el protocolo de comunicación gRPC.
+
+# Duración.
+	08 Noviembre 2018
+
+# Estado actual.
+	En espera de Feedback.
+
+# Autores.
+	Pedro Chacon
+	Jonathan Mendoza
+
+# Detalles.
+	La comunicación entre los componentes se realiza a través de gRPC, para su correcto funcionamiento debe ser creado un archivo .protos, el cual va a definir el protocolo de paso de mensajes. Los lenguajes utilizados para la implementación de esta solución son: Python para la torre de control, Node Js para los aviones y Ruby para las pantallas.
+	 
+# Solución propuesta.
+	La solución que planteó el grupo, fue generar un protocolo en base a 3 mensajes, los cuales son Pedir_Aterrizaje, Pedir_Aterrizaje_Encolado y Solicitar_despegue, los cuales pueden ser vistos dentro del archivo: aeropuerto.proto.
+Con estos mensajes se logra mantener sincronía para el aterrizaje y despegue de los aviones en las distintas torres de control.

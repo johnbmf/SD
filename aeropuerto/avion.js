@@ -114,7 +114,6 @@ function solicitar_aterrizaje(nombre, proveniente, torre_control, loop_opciones)
         sleep(10);
         client.Pedir_Aterrizaje_Encolado({nombre: nombre,proveniente: proveniente}, (response) => {
           respuesta = response.respuesta;
-          console.log("aterrizaje");
         });
       }
     }
