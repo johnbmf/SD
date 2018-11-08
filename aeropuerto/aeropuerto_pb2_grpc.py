@@ -6,7 +6,7 @@ import aeropuerto_pb2 as aeropuerto__pb2
 
 class AeropuertoStub(object):
   """Servicio Aeropuerto
-  
+
   Pedir aterrizaje: Solicitud de aterrizaje por parte del avion.
   """
 
@@ -35,7 +35,7 @@ class AeropuertoStub(object):
 
 class AeropuertoServicer(object):
   """Servicio Aeropuerto
-  
+
   Pedir aterrizaje: Solicitud de aterrizaje por parte del avion.
   """
 

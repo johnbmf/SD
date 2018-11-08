@@ -27,7 +27,7 @@ message AtReply{
   int32 respuesta = 1;
   int32 pista = 2;
   int32 altura = 3;
-  int32 pos_cola = 4;
+  string pos_cola = 4;
 }
 
 message DesRequest{

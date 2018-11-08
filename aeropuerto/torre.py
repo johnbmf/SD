@@ -59,12 +59,16 @@ class AeropuertoServicer(aeropuerto_pb2_grpc.AeropuertoServicer):
             #add info pantalla here
 
             #Respuesta
-            respuesta = aeropuerto_pb2.AtReply(respuesta=1, pista=pista_disponible, altura=5, pos_cola=0)
+            respuesta = aeropuerto_pb2.AtReply(respuesta=1, pista=pista_disponible, altura=5, pos_cola="")
             return(respuesta)
         else:
             print("Todas las pistas ocupadas, encolando avion \n")
+            if len(self.cola) == 0:
+                predecesor = "ninguno (primero en la cola)"
+            else:
+                predecesor = self.cola[-1]
             self.cola.append(request.nombre)
-            respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5*len(self.cola), pos_cola = 2)
+            respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5*len(self.cola), pos_cola = predecesor)
             return(respuesta)
 
     def Pedir_Aterrizaje_Encolado(self, request, context):
@@ -72,11 +76,11 @@ class AeropuertoServicer(aeropuerto_pb2_grpc.AeropuertoServicer):
             pista_disponible = verificar_pista_disponible(self.pA)
 
             if (pista_disponible == -1):
-                respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5, pos_cola = 2)
+                respuesta = aeropuerto_pb2.AtReply(respuesta = 0, pista = 0, altura = 5, pos_cola = "")
                 return (respuesta)
 
             else:
-                respuesta = aeropuerto_pb2.AtReply(respuesta=1, pista=pista_disponible, altura=5, pos_cola=0)
+                respuesta = aeropuerto_pb2.AtReply(respuesta=1, pista=pista_disponible, altura=5, pos_cola="")
                 self.cola.popleft()
                 return (respuesta)
 
