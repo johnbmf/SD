@@ -54,7 +54,7 @@ class AeropuertoServicer(aeropuerto_pb2_grpc.AeropuertoServicer):
         pista_disponible = verificar_pista_disponible(self.pA)
 
         if (pista_disponible != -1):
-            print(request.nombre + " ha llegado al aeropuerto y se le asignara la pista " + str(pista_disponible) + "\n")
+            print(request.nombre + " ha llegado al aeropuerto y se le asignara la pista " + str(pista_disponible + 1) + "\n")
             self.pA[pista_disponible] = request.nombre
             #add info pantalla here
 
