@@ -8,8 +8,8 @@ en la carpeta "aeropuerto".
 -Ingresar cantidad de pistas de despegue.  
 
 ### Instanciacion de un avion:
--Para la instalación de los modulos necesarios para la correcta ejecución, nos ubicamos en el directorio ../SD/aeropuerto/ una vez en ese directorio, se ejecuta el comando npm install.
--En una terminal, instanciaremos un avion. Para ello abrir una terminal en la carpeta
+-Para la instalación de los modulos necesarios para la correcta ejecución, nos ubicamos en el directorio ../SD/aeropuerto/ una vez en ese directorio, se ejecuta el comando npm install.   
+-En una terminal, instanciaremos un avion. Para ello abrir una terminal en la carpeta 
 "aeropuerto".  
 -Ejecutar: node avion.js  
 -En nombre avion poner cualquier nombre (ej: STG4555)  
