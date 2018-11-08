@@ -159,7 +159,6 @@ function solicitar_aterrizaje(nombre, proveniente, torre_control, loop_opciones)
         });
       });
     }
-    solicitar_aterrizaje(avion.nombre, avion.proveniente, avion.torre_control, false);
   });
 }
 
